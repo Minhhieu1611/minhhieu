@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÁO MỚI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            background-color: #111;
+            padding: 20px 0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #2a524c;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        .main-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .main-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .main-content .thumbnails {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-content .thumbnails img {
+            width: 100%;
+            height: auto;
+        }
+
+        .sidebar {
+            flex: 1;
+        }
+
+        .sidebar .news-item {
+            margin-bottom: 10px;
+        }
+
+        .sidebar .news-item img {
+            width: 32%;
+            height: auto;
+        }
+
+        .sidebar .news-item h3 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .navbar {
+            background-color: #28a745;
+            padding: 10px;
+            transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+        /* Thay đổi nền của thanh điều hướng khi lướt chuột vào liên kết */
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Màu nền cho liên kết khi lướt chuột */
+        }
+        .navbar a:hover ~ .navbar {
+            background-color: #28a745; /* Màu nền của thanh điều hướng khi lướt chuột vào liên kết */
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <header>
+        BÁO MỚI
+    </header>
+    <div class="navbar" id="navbar">
+    <nav>
+        <a href="#">NÓNG</a>
+        <a href="#">MỚI</a>
+        <a href="#">VIDEO</a>
+        <a href="#">CHỦ ĐỀ</a>
+        <a href="#"># Mưa lũ miền Bắc</a>
+        <a href="#"># Năng lượng tích cực</a>
+        <a href="#"># Khám phá</a>
+        <a href="#">Việt Nam</a>
+        <a href="#">Thế Giới</a>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <img src="https://media.vov.vn/sites/default/files/styles/large_watermark/public/2024-09/duong_nguyen_chi_thanh_tp_tam_ky_ngap_sau_gan_nua_met.jpg" alt="Main News Image">
+            <h2>Lốc xoáy tốc mái nhà, mưa gây ngập lụt ở nhiều tỉnh thành miền Trung</h2>    
+            <div class="thumbnails">
+                <figure>
+                <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2024-09/1_71.jpg?resize=p_8,w_" alt="Image 1">
+                <figcaption>Bộ Chính trị cho ý kiến về đề án đường sắt tốc độ cao trục Bắc - Nam</figcaption>
+                </figure>
+                <figure>
+                <img src=https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/9/18/tan-cong-hezbollah-15404.jpg?width=0&s=XgHkcO0Iw7LXzcLGhPgyTg alt="Image 2">
+                <figcaption>Tâm điểm vụ nổ máy nhắn tin của Hezbollah dồn vào công ty Hungary, Đài Loan</figcaption>
+                </figure>
+                <figure>
+                <img src="https://cdnmedia.baotintuc.vn/Upload/Publish/18092024ManCity.png" alt="Image 3">
+                <figcaption>Man City - Inter Milan: Đại chiến ở Etihad</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="news-item">
+                <img src="https://image.nhandan.vn/w2000/Uploaded/2024/zsgkqzftqpmu/2024_09_17/ndo_br_a4-dsc-8435-9226.jpg.webp" alt="News 1">
+                <h3>Tổng Bí thư, Chủ tịch nước Tô Lâm dự Lễ kỷ niệm 75 năm truyền thống Học viện Chính trị Quốc gia Hồ Chí Minh
+</h3>
+            </div>
+            <div class="news-item">
+                <img src="https://image.nhandan.vn/w800/Uploaded/2024/athlraubatnau/2024_09_18/img-8022-355.jpeg.webp" alt="News 2">
+                <h3>Ngân hàng khẩn trương hỗ trợ khách hàng khôi phục sản xuất-kinh doanh</h3>
+            </div>
+            <div class="news-item">
+                <img src="https://nld.mediacdn.vn/291774122806476800/2024/9/18/base64-1726666119725842015239.jpeg" alt="News 3">
+                <h3>Hình ảnh cảnh sát biển cứu 8 thuyền viên tàu hàng chìm ở Quảng Nam</h3>
+            </div>
+            <div class="news-item">
+                <img src="https://image.tienphong.vn/w645/Uploaded/2024/pnagub-pnauxl/2024_05_30/satlo-2-6148.jpg" alt="News 4">
+                <h3>Bộ Giao thông nói gì vụ sạt lở hơn 40m quốc lộ ở Cần Thơ?'</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
+</body>
+</html>
