@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio của Minh Hiếu</title>
+    <!-- Liên kết Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS tích hợp trong thẻ style -->
+    <style>
+        /* Định nghĩa CSS variables */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --header-bg-color: #333;
+            --header-text-color: #fff;
+            --button-bg-color: #0000ff;
+            --button-text-color: #ffffff;
+            --footer-bg-color: #333;
+            --footer-text-color: #fff;
+        }
+
+        /* Theme dark */
+        .theme-dark {
+            --bg-color: #181818;
+            --text-color: blue;
+            --header-bg-color: #333333;
+            --header-text-color: blue;
+            --button-bg-color: #ff4500;
+            --button-text-color: blue;
+            --footer-bg-color: #333333;
+            --footer-text-color: blue;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--header-bg-color);
+            color: var(--header-text-color);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            display: inline-block;
+            font-size: 36px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: var(--header-text-color);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .layer {
+            padding: 20px 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .layer h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .layer p {
+            font-size: 18px;
+        }
+
+        footer {
+            background: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--footer-text-color);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ddd;
+        }
+
+        button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="theme-light">
+    <!-- Header với Menu -->
+    <header>
+        <div class="container">
+            <h1>Minh Hiếu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> Giới thiệu</a></li>
+                    <li><a href="#hobby"><i class="fas fa-laptop-code"></i> Kỹ năng</a></li>
+                    <li><a href="#projects"><i class="fas fa-project-diagram"></i> Dự án</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <section id="home" class="layer">
+        <div class="container">
+            <h2>Chào mừng đến với trang cá nhân của tôi!</h2>
+            <p>Đây là nơi tôi trưng bày các kỹ năng và dự án của mình.</p>
+            <button onclick="toggleTheme()">Chuyển đổi giao diện</button>
+        </div>
+    </section>
+
+    <section id="about" class="layer">
+        <div class="container">
+            <h2>Giới thiệu</h2>
+            <p>Xin chào! Mình là Minh Hiếu, sinh viên năm 2 khoa Công nghệ Thông tin tại Đại học Thủ đô Hà Nội. Mình đam mê lập trình và luôn nỗ lực học hỏi để cải thiện kỹ năng của mình.</p>
+        </div>
+    </section>
+
+    <section id="hobby" class="layer">
+        <div class="container">
+            <h2>Sở thích</h2>
+            <ul>
+                <li>Mình thích lập trình, thiết kế website, và chơi thể thao. Ngoài ra, mình còn thích đọc sách về công nghệ và khám phá các xu hướng mới trong lĩnh vực IT.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="layer">
+        <div class="container">
+            <h2>Dự án</h2>
+            <p>Dưới đây là một số dự án gần đây của tôi:</p>
+            <ul>
+                <li><a href="baitap1.html">Bài tập 1 </a></li>
+                <li><a href="baitap2.html">Bài tập 2</a></li>
+                <li><a href="baitap2.html">Bài tập 3</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Minh Hiếu</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('theme-dark');
+        }
+    </script>
+</body>
+</html>
