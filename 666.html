@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Tìm số lớn nhất, nhỏ nhất</title>
+</head>
+<body>
+    <h1>Nhập vào dãy số</h1>
+    <input type="text" id="numberInput" placeholder="Nhập số">
+    <button onclick="findMinMax()">Tìm số lớn nhất và nhỏ nhất</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findMinMax() {
+            // Lấy giá trị từ ô input và chuyển thành mảng số
+            let input = document.getElementById('numberInput').value;
+
+            // Chuyển chuỗi thành mảng ký tự số, sau đó chuyển sang mảng số nguyên
+            let arr = input.split('').map(Number);
+
+            // Kiểm tra nếu mảng rỗng hoặc không hợp lệ (có ký tự không phải số)
+            if (arr.length === 0 || arr.includes(NaN)) {
+                document.getElementById('result').innerHTML = "Vui lòng nhập các số hợp lệ!";
+                return;
+            }
+
+            // Tìm số nhỏ nhất và số lớn nhất
+            let min = Math.min(...arr);
+            let max = Math.max(...arr);
+
+            // Hiển thị kết quả
+            document.getElementById('result').innerHTML = "Số nhỏ nhất: " + min + "<br>Số lớn nhất: " + max;
+        }
+    </script>
+</body>
+</html>
+
+

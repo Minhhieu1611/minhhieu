@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Trò chơi Hãy đoán xem</title>
+</head>
+<body>
+    <h1>Trò chơi "Hãy đoán xem"</h1>
+    <button onclick="guessGame()">Chơi trò chơi</button>
+
+    <script>
+        function guessGame() {
+            let randomNum = Math.floor(Math.random() * 2); // Số ngẫu nhiên 0 hoặc 1
+            let userGuess = prompt("Nhập giá trị 0 đến 10 để đoán:");
+
+            while (userGuess != randomNum) {
+                alert("Sai rồi! Thử lại nhé.");
+                userGuess = prompt("Nhập lại giá trị 1 đến 10:");
+            }
+
+            alert("Chính xác! Bạn đã đoán đúng.");
+        }
+    </script>
+</body>
+</html>
