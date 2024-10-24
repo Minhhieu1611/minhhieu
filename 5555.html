@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý hồ sơ cá nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #2980b9;
+        }
+        input[type="text"], input[type="date"], input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #2980b9;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="tel"]:hover {
+            border-color: #3498db;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .marked {
+            background-color: #e74c3c; /* Đánh dấu công việc bằng màu đỏ */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quản lý hồ sơ cá nhân</h1>
+    <input type="text" id="id" placeholder="Mã ID" required>
+    <input type="text" id="name" placeholder="Họ và tên" required>
+    <input type="date" id="date" required>
+    <input type="text" id="task" placeholder="Nhiệm vụ" required>
+    <input type="tel" id="contact" placeholder="Số liên hệ" pattern="[0-9]{10}" required>
+    
+    <div class="buttons">
+        <button id="addButton">Thêm mới</button>
+        <button id="markButton">Đánh dấu công việc</button>
+        <button id="unmarkButton">Bỏ đánh dấu</button>
+        <button id="deleteButton">Xóa dòng chọn</button>
+    </div>
+
+    <select>
+        <option value="id">Sắp xếp theo Mã ID</option>
+    </select>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script>
+    const addButton = document.getElementById('addButton');
+    const markButton = document.getElementById('markButton');
+    const unmarkButton = document.getElementById('unmarkButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const taskList = document.getElementById('taskList');
+
+    let selectedTask = null;
+
+    // Thêm mới công việc
+    addButton.addEventListener('click', () => {
+        const id = document.getElementById('id').value;
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const task = document.getElementById('task').value;
+        const contact = document.getElementById('contact').value;
+
+        if (id && name && date && task && contact) {
+            const li = document.createElement('li');
+            li.textContent = `ID: ${id}, Tên: ${name}, Ngày: ${date}, Nhiệm vụ: ${task}, SĐT: ${contact}`;
+            li.addEventListener('click', () => {
+                if (selectedTask) {
+                    selectedTask.classList.remove('selected');
+                }
+                selectedTask = li;
+                li.classList.add('selected');
+            });
+            taskList.appendChild(li);
+            clearInputs();
+        } else {
+            alert('Vui lòng điền tất cả các trường!');
+        }
+    });
+
+    // Đánh dấu công việc
+    markButton.addEventListener('click', () => {
+        if (selectedTask) {
+            selectedTask.classList.add('marked');
+        } else {
+            alert('Vui lòng chọn một công việc để đánh dấu!');
+        }
+    });
+
+    // Bỏ đánh dấu công việc
+    unmarkButton.addEventListener('click', () => {
+        if (selectedTask) {
+            selectedTask.classList.remove('marked');
+        } else {
+            alert('Vui lòng chọn một công việc để bỏ đánh dấu!');
+        }
+    });
+
+    // Xóa dòng chọn
+    deleteButton.addEventListener('click', () => {
+        if (selectedTask) {
+            taskList.removeChild(selectedTask);
+            selectedTask = null; // Đặt lại selectedTask
+        } else {
+            alert('Vui lòng chọn một công việc để xóa!');
+        }
+    });
+
+    // Hàm xóa các trường nhập liệu
+    function clearInputs() {
+        document.getElementById('id').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('task').value = '';
+        document.getElementById('contact').value = '';
+    }
+</script>
+
+</body>
+</html>
