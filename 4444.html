@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên Hệ</title>
+    <script>
+        // Lưu URL của trang cá nhân vào localStorage
+        function saveHomePageUrl() {
+            localStorage.setItem('homePageUrl', 'https://minhhieu1611.github.io/minhhieu/44.html');
+        }
+
+        // Hàm để quay lại trang cá nhân
+        function goToHomePage() {
+            const url = localStorage.getItem('homePageUrl');
+            if (url) {
+                window.location.href = url;
+            } else {
+                alert('URL trang cá nhân chưa được lưu.');
+            }
+        }
+
+        // Gọi hàm lưu URL khi trang này được tải
+        window.onload = saveHomePageUrl;
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -104,5 +123,8 @@
             <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61550501879106">Xem trang Facebook của tôi</a></p>
         </div>
     </div>
+    <main>
+        <button onclick="goToHomePage()">Quay lại trang chủ</button>
+    </main>
 </body>
 </html>
