@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu đa cấp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            width: 200px;
+        }
+
+        .menu-item {
+            background-color: #2a74c0;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .sub-menu {
+            display: none;
+            background-color: #f1f1f1;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+        }
+
+        .sub-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .sub-menu a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item" onclick="toggleSubMenu()">
+            Thiết kế web
+            <div class="sub-menu">
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">Javascript</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSubMenu() {
+            var subMenu = document.querySelector('.sub-menu');
+            if (subMenu.style.display === 'block') {
+                subMenu.style.display = 'none';
+            } else {
+                subMenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
