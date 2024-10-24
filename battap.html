@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập</title>
+    <script>
+        // Lưu URL của trang cá nhân vào localStorage
+        function saveHomePageUrl() {
+            localStorage.setItem('homePageUrl', 'https://minhhieu1611.github.io/minhhieu/44.html');
+        }
+
+        // Hàm để quay lại trang cá nhân
+        function goToHomePage() {
+            const url = localStorage.getItem('homePageUrl');
+            if (url) {
+                window.location.href = url;
+            } else {
+                alert('URL trang cá nhân chưa được lưu.');
+            }
+        }
+
+        // Gọi hàm lưu URL khi trang này được tải
+        window.onload = saveHomePageUrl;
+    </script>
+    <style>
+        body {
+            font-size: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Màu nền nhạt cho dễ nhìn */
+            color: #333; /* Màu chữ */
+            padding: 20px; /* Khoảng cách bên trong */
+        }
+        
+        h1 {
+            text-align: center; /* Căn giữa tiêu đề */
+            color: #4CAF50; /* Màu chữ cho tiêu đề */
+        }
+
+        ul {
+            list-style-type: none; /* Bỏ dấu chấm trước các mục */
+            padding: 0; /* Bỏ khoảng cách bên trái */
+        }
+
+        li {
+            margin: 10px 0; /* Khoảng cách giữa các mục */
+        }
+
+        a {
+            text-decoration: none; /* Bỏ gạch chân */
+            color: #4CAF50; /* Màu chữ của liên kết */
+            transition: color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+        }
+
+        a:hover {
+            color: #333; /* Đổi màu khi hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>BÀI TẬP</h1> 
+    <ul>
+        <li><a href="#">Bài tập buổi 1</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi2">Bài tập buổi 2</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi3">Bài tập buổi 3</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi4.HTML">Bài tập buổi 4</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi5 (2).html">Bài tập buổi 5</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi6">Bài tập buổi 6</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi7">Bài tập buổi 7</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi8">Bài tập buổi 8</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi9">Bài tập buổi 9</a></li>
+        <li><a href="https://minhhieu1611.github.io/minhhieu/btapbuoi10">Bài tập buổi 10</a></li>
+    </ul>
+    <main>
+        <button onclick="goToHomePage()">Quay lại trang chủ</button>
+    </main>
+</body>
+</html>
